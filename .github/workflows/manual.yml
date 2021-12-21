@@ -9,7 +9,7 @@ on:
     inputs:
       url:
         description: 'Server url'
-        default: 'https://server.transparent-spending.tk/v3/api-docs'
+        default: 'https://server.events.simonhauck.de/v3/api-docs'
         required: true
       language:
         description: 'Language to be genereated'
