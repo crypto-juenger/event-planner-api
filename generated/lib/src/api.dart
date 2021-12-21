@@ -9,13 +9,11 @@ import 'package:event_planer_api/src/auth/api_key_auth.dart';
 import 'package:event_planer_api/src/auth/basic_auth.dart';
 import 'package:event_planer_api/src/auth/bearer_auth.dart';
 import 'package:event_planer_api/src/auth/oauth.dart';
-import 'package:event_planer_api/src/api/account_controller_api.dart';
-import 'package:event_planer_api/src/api/administration_controller_api.dart';
-import 'package:event_planer_api/src/api/import_account_controller_api.dart';
-import 'package:event_planer_api/src/api/registration_controller_api.dart';
+import 'package:event_planer_api/src/api/event_controller_api.dart';
+import 'package:event_planer_api/src/api/music_controller_api.dart';
 
 class EventPlanerApi {
-  static const String basePath = r'https://server.transparent-spending.tk';
+  static const String basePath = r'https://server.events.simonhauck.de';
 
   final Dio dio;
   final Serializers serializers;
@@ -68,27 +66,15 @@ class EventPlanerApi {
     }
   }
 
-  /// Get AccountControllerApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get EventControllerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  AccountControllerApi getAccountControllerApi() {
-    return AccountControllerApi(dio, serializers);
+  EventControllerApi getEventControllerApi() {
+    return EventControllerApi(dio, serializers);
   }
 
-  /// Get AdministrationControllerApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get MusicControllerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  AdministrationControllerApi getAdministrationControllerApi() {
-    return AdministrationControllerApi(dio, serializers);
-  }
-
-  /// Get ImportAccountControllerApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  ImportAccountControllerApi getImportAccountControllerApi() {
-    return ImportAccountControllerApi(dio, serializers);
-  }
-
-  /// Get RegistrationControllerApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  RegistrationControllerApi getRegistrationControllerApi() {
-    return RegistrationControllerApi(dio, serializers);
+  MusicControllerApi getMusicControllerApi() {
+    return MusicControllerApi(dio, serializers);
   }
 }
