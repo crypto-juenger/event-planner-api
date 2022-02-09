@@ -9,23 +9,13 @@ part of 'music_wish_list_dto.dart';
 class _$MusicWishListDto extends MusicWishListDto {
   @override
   final String id;
-  @override
-  final String eventId;
-  @override
-  final BuiltList<MusicWishDto> musicTracks;
 
   factory _$MusicWishListDto(
           [void Function(MusicWishListDtoBuilder)? updates]) =>
       (new MusicWishListDtoBuilder()..update(updates)).build();
 
-  _$MusicWishListDto._(
-      {required this.id, required this.eventId, required this.musicTracks})
-      : super._() {
+  _$MusicWishListDto._({required this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'MusicWishListDto', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        eventId, 'MusicWishListDto', 'eventId');
-    BuiltValueNullFieldError.checkNotNull(
-        musicTracks, 'MusicWishListDto', 'musicTracks');
   }
 
   @override
@@ -39,24 +29,17 @@ class _$MusicWishListDto extends MusicWishListDto {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is MusicWishListDto &&
-        id == other.id &&
-        eventId == other.eventId &&
-        musicTracks == other.musicTracks;
+    return other is MusicWishListDto && id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, id.hashCode), eventId.hashCode), musicTracks.hashCode));
+    return $jf($jc(0, id.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('MusicWishListDto')
-          ..add('id', id)
-          ..add('eventId', eventId)
-          ..add('musicTracks', musicTracks))
+    return (newBuiltValueToStringHelper('MusicWishListDto')..add('id', id))
         .toString();
   }
 }
@@ -69,16 +52,6 @@ class MusicWishListDtoBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _eventId;
-  String? get eventId => _$this._eventId;
-  set eventId(String? eventId) => _$this._eventId = eventId;
-
-  ListBuilder<MusicWishDto>? _musicTracks;
-  ListBuilder<MusicWishDto> get musicTracks =>
-      _$this._musicTracks ??= new ListBuilder<MusicWishDto>();
-  set musicTracks(ListBuilder<MusicWishDto>? musicTracks) =>
-      _$this._musicTracks = musicTracks;
-
   MusicWishListDtoBuilder() {
     MusicWishListDto._defaults(this);
   }
@@ -87,8 +60,6 @@ class MusicWishListDtoBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _eventId = $v.eventId;
-      _musicTracks = $v.musicTracks.toBuilder();
       _$v = null;
     }
     return this;
@@ -107,26 +78,10 @@ class MusicWishListDtoBuilder
 
   @override
   _$MusicWishListDto build() {
-    _$MusicWishListDto _$result;
-    try {
-      _$result = _$v ??
-          new _$MusicWishListDto._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'MusicWishListDto', 'id'),
-              eventId: BuiltValueNullFieldError.checkNotNull(
-                  eventId, 'MusicWishListDto', 'eventId'),
-              musicTracks: musicTracks.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'musicTracks';
-        musicTracks.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'MusicWishListDto', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$MusicWishListDto._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, 'MusicWishListDto', 'id'));
     replace(_$result);
     return _$result;
   }

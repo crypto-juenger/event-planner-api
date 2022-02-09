@@ -9,10 +9,11 @@ export 'package:event_planer_api/src/auth/oauth.dart';
 export 'package:event_planer_api/src/serializers.dart';
 export 'package:event_planer_api/src/model/date.dart';
 
-export 'package:event_planer_api/src/api/events_api.dart';
-export 'package:event_planer_api/src/api/users_api.dart';
+export 'package:event_planer_api/src/api/event_controller_api.dart';
+export 'package:event_planer_api/src/api/music_controller_api.dart';
 
-export 'package:event_planer_api/src/model/create_event_unit_dto.dart';
-export 'package:event_planer_api/src/model/create_user_dto.dart';
-export 'package:event_planer_api/src/model/event_unit_dto.dart';
-export 'package:event_planer_api/src/model/user_dto.dart';
+export 'package:event_planer_api/src/model/create_event_config_dto.dart';
+export 'package:event_planer_api/src/model/current_user_dto.dart';
+export 'package:event_planer_api/src/model/event_dto.dart';
+export 'package:event_planer_api/src/model/music_wish_list_dto.dart';
+export 'package:event_planer_api/src/model/public_user_dto.dart';

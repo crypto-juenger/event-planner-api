@@ -9,11 +9,11 @@ import 'package:event_planer_api/src/auth/api_key_auth.dart';
 import 'package:event_planer_api/src/auth/basic_auth.dart';
 import 'package:event_planer_api/src/auth/bearer_auth.dart';
 import 'package:event_planer_api/src/auth/oauth.dart';
-import 'package:event_planer_api/src/api/events_api.dart';
-import 'package:event_planer_api/src/api/users_api.dart';
+import 'package:event_planer_api/src/api/event_controller_api.dart';
+import 'package:event_planer_api/src/api/music_controller_api.dart';
 
 class EventPlanerApi {
-  static const String basePath = r'http://localhost';
+  static const String basePath = r'https://server.events.simonhauck.de';
 
   final Dio dio;
   final Serializers serializers;
@@ -66,15 +66,15 @@ class EventPlanerApi {
     }
   }
 
-  /// Get EventsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get EventControllerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  EventsApi getEventsApi() {
-    return EventsApi(dio, serializers);
+  EventControllerApi getEventControllerApi() {
+    return EventControllerApi(dio, serializers);
   }
 
-  /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get MusicControllerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  UsersApi getUsersApi() {
-    return UsersApi(dio, serializers);
+  MusicControllerApi getMusicControllerApi() {
+    return MusicControllerApi(dio, serializers);
   }
 }

@@ -9,27 +9,29 @@ All URIs are relative to *https://server.events.simonhauck.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](EventControllerApi.md#create) | **POST** /events | 
-[**findOne**](EventControllerApi.md#findone) | **GET** /events/{id} | 
+[**createEvent**](EventControllerApi.md#createevent) | **POST** /events | Create a new event, where the current user is the admin
+[**getLatestEvent**](EventControllerApi.md#getlatestevent) | **GET** /events/latest | Get your latest active event
+[**joinEventWithId**](EventControllerApi.md#joineventwithid) | **POST** /events/{eventId}/users | Join an event as guest
 
 
-# **create**
-> EventDto create(createEventDto)
+# **createEvent**
+> EventDto createEvent(user, createEventConfigDto)
 
-
+Create a new event, where the current user is the admin
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
 
 final api = EventPlanerApi().getEventControllerApi();
-final CreateEventDto createEventDto = ; // CreateEventDto | 
+final CurrentUserDto user = ; // CurrentUserDto | 
+final CreateEventConfigDto createEventConfigDto = ; // CreateEventConfigDto | 
 
 try {
-    final response = api.create(createEventDto);
+    final response = api.createEvent(user, createEventConfigDto);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling EventControllerApi->create: $e\n');
+    print('Exception when calling EventControllerApi->createEvent: $e\n');
 }
 ```
 
@@ -37,7 +39,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createEventDto** | [**CreateEventDto**](CreateEventDto.md)|  | 
+ **user** | [**CurrentUserDto**](.md)|  | 
+ **createEventConfigDto** | [**CreateEventConfigDto**](CreateEventConfigDto.md)|  | 
 
 ### Return type
 
@@ -54,23 +57,23 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **findOne**
-> EventDto findOne(id)
+# **getLatestEvent**
+> EventDto getLatestEvent(user)
 
-
+Get your latest active event
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
 
 final api = EventPlanerApi().getEventControllerApi();
-final String id = id_example; // String | 
+final CurrentUserDto user = ; // CurrentUserDto | 
 
 try {
-    final response = api.findOne(id);
+    final response = api.getLatestEvent(user);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling EventControllerApi->findOne: $e\n');
+    print('Exception when calling EventControllerApi->getLatestEvent: $e\n');
 }
 ```
 
@@ -78,7 +81,50 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
+ **user** | [**CurrentUserDto**](.md)|  | 
+
+### Return type
+
+[**EventDto**](EventDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **joinEventWithId**
+> EventDto joinEventWithId(eventId, user)
+
+Join an event as guest
+
+### Example
+```dart
+import 'package:event_planer_api/api.dart';
+
+final api = EventPlanerApi().getEventControllerApi();
+final String eventId = eventId_example; // String | 
+final CurrentUserDto user = ; // CurrentUserDto | 
+
+try {
+    final response = api.joinEventWithId(eventId, user);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling EventControllerApi->joinEventWithId: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **String**|  | 
+ **user** | [**CurrentUserDto**](.md)|  | 
 
 ### Return type
 

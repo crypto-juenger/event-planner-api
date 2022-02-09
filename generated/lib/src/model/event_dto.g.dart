@@ -10,18 +10,14 @@ class _$EventDto extends EventDto {
   @override
   final String id;
   @override
-  final String name;
-  @override
-  final String slogan;
+  final BuiltList<PublicUserDto> eventUsers;
 
   factory _$EventDto([void Function(EventDtoBuilder)? updates]) =>
       (new EventDtoBuilder()..update(updates)).build();
 
-  _$EventDto._({required this.id, required this.name, required this.slogan})
-      : super._() {
+  _$EventDto._({required this.id, required this.eventUsers}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'EventDto', 'id');
-    BuiltValueNullFieldError.checkNotNull(name, 'EventDto', 'name');
-    BuiltValueNullFieldError.checkNotNull(slogan, 'EventDto', 'slogan');
+    BuiltValueNullFieldError.checkNotNull(eventUsers, 'EventDto', 'eventUsers');
   }
 
   @override
@@ -36,21 +32,19 @@ class _$EventDto extends EventDto {
     if (identical(other, this)) return true;
     return other is EventDto &&
         id == other.id &&
-        name == other.name &&
-        slogan == other.slogan;
+        eventUsers == other.eventUsers;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, id.hashCode), name.hashCode), slogan.hashCode));
+    return $jf($jc($jc(0, id.hashCode), eventUsers.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EventDto')
           ..add('id', id)
-          ..add('name', name)
-          ..add('slogan', slogan))
+          ..add('eventUsers', eventUsers))
         .toString();
   }
 }
@@ -62,13 +56,11 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _slogan;
-  String? get slogan => _$this._slogan;
-  set slogan(String? slogan) => _$this._slogan = slogan;
+  ListBuilder<PublicUserDto>? _eventUsers;
+  ListBuilder<PublicUserDto> get eventUsers =>
+      _$this._eventUsers ??= new ListBuilder<PublicUserDto>();
+  set eventUsers(ListBuilder<PublicUserDto>? eventUsers) =>
+      _$this._eventUsers = eventUsers;
 
   EventDtoBuilder() {
     EventDto._defaults(this);
@@ -78,8 +70,7 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _name = $v.name;
-      _slogan = $v.slogan;
+      _eventUsers = $v.eventUsers.toBuilder();
       _$v = null;
     }
     return this;
@@ -98,13 +89,23 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
 
   @override
   _$EventDto build() {
-    final _$result = _$v ??
-        new _$EventDto._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'EventDto', 'id'),
-            name:
-                BuiltValueNullFieldError.checkNotNull(name, 'EventDto', 'name'),
-            slogan: BuiltValueNullFieldError.checkNotNull(
-                slogan, 'EventDto', 'slogan'));
+    _$EventDto _$result;
+    try {
+      _$result = _$v ??
+          new _$EventDto._(
+              id: BuiltValueNullFieldError.checkNotNull(id, 'EventDto', 'id'),
+              eventUsers: eventUsers.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'eventUsers';
+        eventUsers.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'EventDto', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

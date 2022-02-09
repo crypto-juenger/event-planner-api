@@ -2,6 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:built_collection/built_collection.dart';
+import 'package:event_planer_api/src/model/public_user_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,17 +13,13 @@ part 'event_dto.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [name] 
-/// * [slogan] 
+/// * [eventUsers] 
 abstract class EventDto implements Built<EventDto, EventDtoBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
 
-    @BuiltValueField(wireName: r'name')
-    String get name;
-
-    @BuiltValueField(wireName: r'slogan')
-    String get slogan;
+    @BuiltValueField(wireName: r'eventUsers')
+    BuiltList<PublicUserDto> get eventUsers;
 
     EventDto._();
 
@@ -50,13 +48,9 @@ class _$EventDtoSerializer implements StructuredSerializer<EventDto> {
             ..add(serializers.serialize(object.id,
                 specifiedType: const FullType(String)));
         result
-            ..add(r'name')
-            ..add(serializers.serialize(object.name,
-                specifiedType: const FullType(String)));
-        result
-            ..add(r'slogan')
-            ..add(serializers.serialize(object.slogan,
-                specifiedType: const FullType(String)));
+            ..add(r'eventUsers')
+            ..add(serializers.serialize(object.eventUsers,
+                specifiedType: const FullType(BuiltList, [FullType(PublicUserDto)])));
         return result;
     }
 
@@ -77,15 +71,10 @@ class _$EventDtoSerializer implements StructuredSerializer<EventDto> {
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
                     break;
-                case r'name':
+                case r'eventUsers':
                     final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.name = valueDes;
-                    break;
-                case r'slogan':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.slogan = valueDes;
+                        specifiedType: const FullType(BuiltList, [FullType(PublicUserDto)])) as BuiltList<PublicUserDto>;
+                    result.eventUsers.replace(valueDes);
                     break;
             }
         }
