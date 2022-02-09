@@ -9,7 +9,7 @@ on:
     inputs:
       url:
         description: 'Server url'
-        default: 'https://server.events.simonhauck.de/spec/json'
+        default: 'https://server.events.simonhauck.de/v3/api-docs
         required: true
       language:
         description: 'Language to be genereated'
