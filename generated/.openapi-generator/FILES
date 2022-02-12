@@ -37,7 +37,3 @@ lib/src/model/update_schedule_dto.dart
 lib/src/model/wish_dto.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/schedule_controller_api_test.dart
-test/schedule_dto_test.dart
-test/schedule_item_dto_test.dart
-test/update_schedule_dto_test.dart

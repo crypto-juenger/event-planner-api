@@ -13,6 +13,7 @@ part 'schedule_item_dto.g.dart';
 /// * [startTime] 
 /// * [endTime] 
 /// * [name] 
+/// * [description] 
 abstract class ScheduleItemDto implements Built<ScheduleItemDto, ScheduleItemDtoBuilder> {
     @BuiltValueField(wireName: r'startTime')
     DateTime get startTime;
@@ -22,6 +23,9 @@ abstract class ScheduleItemDto implements Built<ScheduleItemDto, ScheduleItemDto
 
     @BuiltValueField(wireName: r'name')
     String get name;
+
+    @BuiltValueField(wireName: r'description')
+    String get description;
 
     ScheduleItemDto._();
 
@@ -59,6 +63,10 @@ class _$ScheduleItemDtoSerializer implements StructuredSerializer<ScheduleItemDt
             ..add(r'name')
             ..add(serializers.serialize(object.name,
                 specifiedType: const FullType(String)));
+        result
+            ..add(r'description')
+            ..add(serializers.serialize(object.description,
+                specifiedType: const FullType(String)));
         return result;
     }
 
@@ -88,6 +96,11 @@ class _$ScheduleItemDtoSerializer implements StructuredSerializer<ScheduleItemDt
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.name = valueDes;
+                    break;
+                case r'description':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.description = valueDes;
                     break;
             }
         }

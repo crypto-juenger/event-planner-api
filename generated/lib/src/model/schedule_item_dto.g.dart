@@ -13,16 +13,23 @@ class _$ScheduleItemDto extends ScheduleItemDto {
   final DateTime? endTime;
   @override
   final String name;
+  @override
+  final String description;
 
   factory _$ScheduleItemDto([void Function(ScheduleItemDtoBuilder)? updates]) =>
       (new ScheduleItemDtoBuilder()..update(updates)).build();
 
   _$ScheduleItemDto._(
-      {required this.startTime, this.endTime, required this.name})
+      {required this.startTime,
+      this.endTime,
+      required this.name,
+      required this.description})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         startTime, 'ScheduleItemDto', 'startTime');
     BuiltValueNullFieldError.checkNotNull(name, 'ScheduleItemDto', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        description, 'ScheduleItemDto', 'description');
   }
 
   @override
@@ -39,13 +46,15 @@ class _$ScheduleItemDto extends ScheduleItemDto {
     return other is ScheduleItemDto &&
         startTime == other.startTime &&
         endTime == other.endTime &&
-        name == other.name;
+        name == other.name &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, startTime.hashCode), endTime.hashCode), name.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, startTime.hashCode), endTime.hashCode), name.hashCode),
+        description.hashCode));
   }
 
   @override
@@ -53,7 +62,8 @@ class _$ScheduleItemDto extends ScheduleItemDto {
     return (newBuiltValueToStringHelper('ScheduleItemDto')
           ..add('startTime', startTime)
           ..add('endTime', endTime)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('description', description))
         .toString();
   }
 }
@@ -74,6 +84,10 @@ class ScheduleItemDtoBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   ScheduleItemDtoBuilder() {
     ScheduleItemDto._defaults(this);
   }
@@ -84,6 +98,7 @@ class ScheduleItemDtoBuilder
       _startTime = $v.startTime;
       _endTime = $v.endTime;
       _name = $v.name;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -108,7 +123,9 @@ class ScheduleItemDtoBuilder
                 startTime, 'ScheduleItemDto', 'startTime'),
             endTime: endTime,
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'ScheduleItemDto', 'name'));
+                name, 'ScheduleItemDto', 'name'),
+            description: BuiltValueNullFieldError.checkNotNull(
+                description, 'ScheduleItemDto', 'description'));
     replace(_$result);
     return _$result;
   }
