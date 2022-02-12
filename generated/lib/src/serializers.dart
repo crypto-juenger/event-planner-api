@@ -13,19 +13,21 @@ import 'package:event_planer_api/src/date_serializer.dart';
 import 'package:event_planer_api/src/model/date.dart';
 
 import 'package:event_planer_api/src/model/create_event_config_dto.dart';
-import 'package:event_planer_api/src/model/current_user_dto.dart';
 import 'package:event_planer_api/src/model/event_dto.dart';
 import 'package:event_planer_api/src/model/music_wish_list_dto.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
+import 'package:event_planer_api/src/model/title_dto.dart';
+import 'package:event_planer_api/src/model/wish_dto.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
   CreateEventConfigDto,
-  CurrentUserDto,
   EventDto,
   MusicWishListDto,
   PublicUserDto,
+  TitleDto,
+  WishDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..add(const DateSerializer())

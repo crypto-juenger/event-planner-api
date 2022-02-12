@@ -9,26 +9,27 @@ All URIs are relative to *https://server.events.simonhauck.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createEvent**](EventControllerApi.md#createevent) | **POST** /events | Create a new event, where the current user is the admin
-[**getLatestEvent**](EventControllerApi.md#getlatestevent) | **GET** /events/latest | Get your latest active event
-[**joinEventWithId**](EventControllerApi.md#joineventwithid) | **POST** /events/{eventId}/users | Join an event as guest
+[**createEvent**](EventControllerApi.md#createevent) | **POST** /api/events | Create a new event, where the current user is the admin
+[**getLatestEvent**](EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
+[**joinEventWithId**](EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
 
 
 # **createEvent**
-> EventDto createEvent(user, createEventConfigDto)
+> EventDto createEvent(createEventConfigDto)
 
 Create a new event, where the current user is the admin
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = EventPlanerApi().getEventControllerApi();
-final CurrentUserDto user = ; // CurrentUserDto | 
 final CreateEventConfigDto createEventConfigDto = ; // CreateEventConfigDto | 
 
 try {
-    final response = api.createEvent(user, createEventConfigDto);
+    final response = api.createEvent(createEventConfigDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling EventControllerApi->createEvent: $e\n');
@@ -39,7 +40,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**CurrentUserDto**](.md)|  | 
  **createEventConfigDto** | [**CreateEventConfigDto**](CreateEventConfigDto.md)|  | 
 
 ### Return type
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[jwt_token](../README.md#jwt_token)
 
 ### HTTP request headers
 
@@ -58,19 +58,20 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLatestEvent**
-> EventDto getLatestEvent(user)
+> EventDto getLatestEvent()
 
 Get your latest active event
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = EventPlanerApi().getEventControllerApi();
-final CurrentUserDto user = ; // CurrentUserDto | 
 
 try {
-    final response = api.getLatestEvent(user);
+    final response = api.getLatestEvent();
     print(response);
 } catch on DioError (e) {
     print('Exception when calling EventControllerApi->getLatestEvent: $e\n');
@@ -78,10 +79,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user** | [**CurrentUserDto**](.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -89,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[jwt_token](../README.md#jwt_token)
 
 ### HTTP request headers
 
@@ -99,20 +97,21 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **joinEventWithId**
-> EventDto joinEventWithId(eventId, user)
+> EventDto joinEventWithId(eventId)
 
 Join an event as guest
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = EventPlanerApi().getEventControllerApi();
 final String eventId = eventId_example; // String | 
-final CurrentUserDto user = ; // CurrentUserDto | 
 
 try {
-    final response = api.joinEventWithId(eventId, user);
+    final response = api.joinEventWithId(eventId);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling EventControllerApi->joinEventWithId: $e\n');
@@ -124,7 +123,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eventId** | **String**|  | 
- **user** | [**CurrentUserDto**](.md)|  | 
 
 ### Return type
 
@@ -132,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[jwt_token](../README.md#jwt_token)
 
 ### HTTP request headers
 

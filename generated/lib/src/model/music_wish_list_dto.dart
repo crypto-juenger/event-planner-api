@@ -2,6 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:built_collection/built_collection.dart';
+import 'package:event_planer_api/src/model/wish_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,9 +13,17 @@ part 'music_wish_list_dto.g.dart';
 ///
 /// Properties:
 /// * [id] 
+/// * [eventId] 
+/// * [titles] 
 abstract class MusicWishListDto implements Built<MusicWishListDto, MusicWishListDtoBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
+
+    @BuiltValueField(wireName: r'eventId')
+    String get eventId;
+
+    @BuiltValueField(wireName: r'titles')
+    BuiltList<WishDto> get titles;
 
     MusicWishListDto._();
 
@@ -41,6 +51,14 @@ class _$MusicWishListDtoSerializer implements StructuredSerializer<MusicWishList
             ..add(r'id')
             ..add(serializers.serialize(object.id,
                 specifiedType: const FullType(String)));
+        result
+            ..add(r'eventId')
+            ..add(serializers.serialize(object.eventId,
+                specifiedType: const FullType(String)));
+        result
+            ..add(r'titles')
+            ..add(serializers.serialize(object.titles,
+                specifiedType: const FullType(BuiltList, [FullType(WishDto)])));
         return result;
     }
 
@@ -60,6 +78,16 @@ class _$MusicWishListDtoSerializer implements StructuredSerializer<MusicWishList
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
+                    break;
+                case r'eventId':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(String)) as String;
+                    result.eventId = valueDes;
+                    break;
+                case r'titles':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(BuiltList, [FullType(WishDto)])) as BuiltList<WishDto>;
+                    result.titles.replace(valueDes);
                     break;
             }
         }

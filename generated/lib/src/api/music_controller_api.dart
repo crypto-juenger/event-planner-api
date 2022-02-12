@@ -17,10 +17,11 @@ class MusicControllerApi {
 
   const MusicControllerApi(this._dio, this._serializers);
 
-  /// getHelloWorld
+  /// getWishList
   /// 
   ///
   /// Parameters:
+  /// * [eventId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -30,7 +31,8 @@ class MusicControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MusicWishListDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MusicWishListDto>> getHelloWorld({ 
+  Future<Response<MusicWishListDto>> getWishList({ 
+    required String eventId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -38,14 +40,19 @@ class MusicControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/music';
+    final _path = r'/api/music/wishlist/{eventId}'.replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'jwt_token',
+          },
+        ],
         ...?extra,
       },
       validateStatus: validateStatus,

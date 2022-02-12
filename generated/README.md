@@ -47,11 +47,10 @@ import 'package:event_planer_api/event_planer_api.dart';
 
 
 final api = EventPlanerApi().getEventControllerApi();
-final CurrentUserDto user = ; // CurrentUserDto | 
 final CreateEventConfigDto createEventConfigDto = ; // CreateEventConfigDto | 
 
 try {
-    final response = await api.createEvent(user, createEventConfigDto);
+    final response = await api.createEvent(createEventConfigDto);
     print(response);
 } catch on DioError (e) {
     print("Exception when calling EventControllerApi->createEvent: $e\n");
@@ -65,24 +64,32 @@ All URIs are relative to *https://server.events.simonhauck.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*EventControllerApi*](doc/EventControllerApi.md) | [**createEvent**](doc/EventControllerApi.md#createevent) | **POST** /events | Create a new event, where the current user is the admin
-[*EventControllerApi*](doc/EventControllerApi.md) | [**getLatestEvent**](doc/EventControllerApi.md#getlatestevent) | **GET** /events/latest | Get your latest active event
-[*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /events/{eventId}/users | Join an event as guest
-[*MusicControllerApi*](doc/MusicControllerApi.md) | [**getHelloWorld**](doc/MusicControllerApi.md#gethelloworld) | **GET** /music | 
+[*EventControllerApi*](doc/EventControllerApi.md) | [**createEvent**](doc/EventControllerApi.md#createevent) | **POST** /api/events | Create a new event, where the current user is the admin
+[*EventControllerApi*](doc/EventControllerApi.md) | [**getLatestEvent**](doc/EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
+[*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
+[*MusicControllerApi*](doc/MusicControllerApi.md) | [**getWishList**](doc/MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
 
 
 ## Documentation For Models
 
  - [CreateEventConfigDto](doc/CreateEventConfigDto.md)
- - [CurrentUserDto](doc/CurrentUserDto.md)
  - [EventDto](doc/EventDto.md)
  - [MusicWishListDto](doc/MusicWishListDto.md)
  - [PublicUserDto](doc/PublicUserDto.md)
+ - [TitleDto](doc/TitleDto.md)
+ - [WishDto](doc/WishDto.md)
 
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## jwt_token
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: https://auth.events.simonhauck.de/auth/realms/events/protocol/openid-connect/auth
+- **Scopes**: 
+ - **openid**: openid
 
 
 ## Author

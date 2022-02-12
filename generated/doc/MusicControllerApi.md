@@ -9,30 +9,36 @@ All URIs are relative to *https://server.events.simonhauck.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getHelloWorld**](MusicControllerApi.md#gethelloworld) | **GET** /music | 
+[**getWishList**](MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
 
 
-# **getHelloWorld**
-> MusicWishListDto getHelloWorld()
+# **getWishList**
+> MusicWishListDto getWishList(eventId)
 
 
 
 ### Example
 ```dart
 import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = EventPlanerApi().getMusicControllerApi();
+final String eventId = eventId_example; // String | 
 
 try {
-    final response = api.getHelloWorld();
+    final response = api.getWishList(eventId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MusicControllerApi->getHelloWorld: $e\n');
+    print('Exception when calling MusicControllerApi->getWishList: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **String**|  | 
 
 ### Return type
 
@@ -40,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[jwt_token](../README.md#jwt_token)
 
 ### HTTP request headers
 
