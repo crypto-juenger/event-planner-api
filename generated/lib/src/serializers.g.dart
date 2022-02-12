@@ -12,11 +12,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MusicWishListDto.serializer)
       ..add(PublicUserDto.serializer)
       ..add(PublicUserDtoRoleEnum.serializer)
+      ..add(ScheduleDto.serializer)
+      ..add(ScheduleItemDto.serializer)
       ..add(TitleDto.serializer)
+      ..add(UpdateScheduleDto.serializer)
       ..add(WishDto.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(PublicUserDto)]),
           () => new ListBuilder<PublicUserDto>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ScheduleItemDto)]),
+          () => new ListBuilder<ScheduleItemDto>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ScheduleItemDto)]),
+          () => new ListBuilder<ScheduleItemDto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(WishDto)]),
           () => new ListBuilder<WishDto>()))

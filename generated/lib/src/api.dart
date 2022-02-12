@@ -11,6 +11,7 @@ import 'package:event_planer_api/src/auth/bearer_auth.dart';
 import 'package:event_planer_api/src/auth/oauth.dart';
 import 'package:event_planer_api/src/api/event_controller_api.dart';
 import 'package:event_planer_api/src/api/music_controller_api.dart';
+import 'package:event_planer_api/src/api/schedule_controller_api.dart';
 
 class EventPlanerApi {
   static const String basePath = r'https://server.events.simonhauck.de';
@@ -76,5 +77,11 @@ class EventPlanerApi {
   /// by doing that all interceptors will not be executed
   MusicControllerApi getMusicControllerApi() {
     return MusicControllerApi(dio, serializers);
+  }
+
+  /// Get ScheduleControllerApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ScheduleControllerApi getScheduleControllerApi() {
+    return ScheduleControllerApi(dio, serializers);
   }
 }

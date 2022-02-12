@@ -68,6 +68,9 @@ Class | Method | HTTP request | Description
 [*EventControllerApi*](doc/EventControllerApi.md) | [**getLatestEvent**](doc/EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
 [*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
 [*MusicControllerApi*](doc/MusicControllerApi.md) | [**getWishList**](doc/MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
+[*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**createSchedule**](doc/ScheduleControllerApi.md#createschedule) | **POST** /api/events/{eventId}/schedule | 
+[*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**getSchedule**](doc/ScheduleControllerApi.md#getschedule) | **GET** /api/events/{eventId}/schedule | 
+[*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**updateSchedule**](doc/ScheduleControllerApi.md#updateschedule) | **PUT** /api/events/{eventId}/schedule | 
 
 
 ## Documentation For Models
@@ -76,7 +79,10 @@ Class | Method | HTTP request | Description
  - [EventDto](doc/EventDto.md)
  - [MusicWishListDto](doc/MusicWishListDto.md)
  - [PublicUserDto](doc/PublicUserDto.md)
+ - [ScheduleDto](doc/ScheduleDto.md)
+ - [ScheduleItemDto](doc/ScheduleItemDto.md)
  - [TitleDto](doc/TitleDto.md)
+ - [UpdateScheduleDto](doc/UpdateScheduleDto.md)
  - [WishDto](doc/WishDto.md)
 
 

@@ -16,7 +16,10 @@ import 'package:event_planer_api/src/model/create_event_config_dto.dart';
 import 'package:event_planer_api/src/model/event_dto.dart';
 import 'package:event_planer_api/src/model/music_wish_list_dto.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
+import 'package:event_planer_api/src/model/schedule_dto.dart';
+import 'package:event_planer_api/src/model/schedule_item_dto.dart';
 import 'package:event_planer_api/src/model/title_dto.dart';
+import 'package:event_planer_api/src/model/update_schedule_dto.dart';
 import 'package:event_planer_api/src/model/wish_dto.dart';
 
 part 'serializers.g.dart';
@@ -26,7 +29,10 @@ part 'serializers.g.dart';
   EventDto,
   MusicWishListDto,
   PublicUserDto,
+  ScheduleDto,
+  ScheduleItemDto,
   TitleDto,
+  UpdateScheduleDto,
   WishDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
