@@ -53,4 +53,3 @@ lib/src/model/update_schedule_dto.dart
 lib/src/model/wish_dto.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/event_dtos_test.dart
