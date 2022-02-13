@@ -8,7 +8,7 @@ part of 'overnight_stay_offer_dto.dart';
 
 class _$OvernightStayOfferDto extends OvernightStayOfferDto {
   @override
-  final String id;
+  final String? id;
   @override
   final String eventId;
   @override
@@ -20,31 +20,24 @@ class _$OvernightStayOfferDto extends OvernightStayOfferDto {
   @override
   final String note;
   @override
-  final DateTime? created;
+  final DateTime? createdAt;
   @override
-  final DateTime? updated;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
 
   factory _$OvernightStayOfferDto(
           [void Function(OvernightStayOfferDtoBuilder)? updates]) =>
       (new OvernightStayOfferDtoBuilder()..update(updates)).build();
 
   _$OvernightStayOfferDto._(
-      {required this.id,
+      {this.id,
       required this.eventId,
       required this.creatorId,
       required this.offeredSpots,
       required this.spotsTaken,
       required this.note,
-      this.created,
-      this.updated,
-      required this.createdAt,
-      required this.updatedAt})
+      this.createdAt,
+      this.updatedAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'OvernightStayOfferDto', 'id');
     BuiltValueNullFieldError.checkNotNull(
         eventId, 'OvernightStayOfferDto', 'eventId');
     BuiltValueNullFieldError.checkNotNull(
@@ -55,10 +48,6 @@ class _$OvernightStayOfferDto extends OvernightStayOfferDto {
         spotsTaken, 'OvernightStayOfferDto', 'spotsTaken');
     BuiltValueNullFieldError.checkNotNull(
         note, 'OvernightStayOfferDto', 'note');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'OvernightStayOfferDto', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'OvernightStayOfferDto', 'updatedAt');
   }
 
   @override
@@ -80,8 +69,6 @@ class _$OvernightStayOfferDto extends OvernightStayOfferDto {
         offeredSpots == other.offeredSpots &&
         spotsTaken == other.spotsTaken &&
         note == other.note &&
-        created == other.created &&
-        updated == other.updated &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
   }
@@ -93,15 +80,11 @@ class _$OvernightStayOfferDto extends OvernightStayOfferDto {
             $jc(
                 $jc(
                     $jc(
-                        $jc(
-                            $jc(
-                                $jc($jc($jc(0, id.hashCode), eventId.hashCode),
-                                    creatorId.hashCode),
-                                offeredSpots.hashCode),
-                            spotsTaken.hashCode),
-                        note.hashCode),
-                    created.hashCode),
-                updated.hashCode),
+                        $jc($jc($jc(0, id.hashCode), eventId.hashCode),
+                            creatorId.hashCode),
+                        offeredSpots.hashCode),
+                    spotsTaken.hashCode),
+                note.hashCode),
             createdAt.hashCode),
         updatedAt.hashCode));
   }
@@ -115,8 +98,6 @@ class _$OvernightStayOfferDto extends OvernightStayOfferDto {
           ..add('offeredSpots', offeredSpots)
           ..add('spotsTaken', spotsTaken)
           ..add('note', note)
-          ..add('created', created)
-          ..add('updated', updated)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -153,14 +134,6 @@ class OvernightStayOfferDtoBuilder
   String? get note => _$this._note;
   set note(String? note) => _$this._note = note;
 
-  DateTime? _created;
-  DateTime? get created => _$this._created;
-  set created(DateTime? created) => _$this._created = created;
-
-  DateTime? _updated;
-  DateTime? get updated => _$this._updated;
-  set updated(DateTime? updated) => _$this._updated = updated;
-
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
@@ -182,8 +155,6 @@ class OvernightStayOfferDtoBuilder
       _offeredSpots = $v.offeredSpots;
       _spotsTaken = $v.spotsTaken.toBuilder();
       _note = $v.note;
-      _created = $v.created;
-      _updated = $v.updated;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -208,8 +179,7 @@ class OvernightStayOfferDtoBuilder
     try {
       _$result = _$v ??
           new _$OvernightStayOfferDto._(
-              id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'OvernightStayOfferDto', 'id'),
+              id: id,
               eventId: BuiltValueNullFieldError.checkNotNull(
                   eventId, 'OvernightStayOfferDto', 'eventId'),
               creatorId: BuiltValueNullFieldError.checkNotNull(
@@ -219,12 +189,8 @@ class OvernightStayOfferDtoBuilder
               spotsTaken: spotsTaken.build(),
               note: BuiltValueNullFieldError.checkNotNull(
                   note, 'OvernightStayOfferDto', 'note'),
-              created: created,
-              updated: updated,
-              createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, 'OvernightStayOfferDto', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(
-                  updatedAt, 'OvernightStayOfferDto', 'updatedAt'));
+              createdAt: createdAt,
+              updatedAt: updatedAt);
     } catch (_) {
       late String _$failedField;
       try {

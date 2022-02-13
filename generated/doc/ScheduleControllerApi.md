@@ -10,6 +10,7 @@ All URIs are relative to *https://server.events.simonhauck.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createSchedule**](ScheduleControllerApi.md#createschedule) | **POST** /api/events/{eventId}/schedule | 
+[**deleteSchedule**](ScheduleControllerApi.md#deleteschedule) | **DELETE** /api/events/{eventId}/schedule | 
 [**getSchedule**](ScheduleControllerApi.md#getschedule) | **GET** /api/events/{eventId}/schedule | 
 [**updateSchedule**](ScheduleControllerApi.md#updateschedule) | **PUT** /api/events/{eventId}/schedule | 
 
@@ -54,6 +55,48 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteSchedule**
+> deleteSchedule(eventId)
+
+
+
+### Example
+```dart
+import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = EventPlanerApi().getScheduleControllerApi();
+final String eventId = eventId_example; // String | 
+
+try {
+    api.deleteSchedule(eventId);
+} catch on DioError (e) {
+    print('Exception when calling ScheduleControllerApi->deleteSchedule: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwt_token](../README.md#jwt_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

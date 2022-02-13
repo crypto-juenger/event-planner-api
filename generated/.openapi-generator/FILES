@@ -4,6 +4,7 @@ analysis_options.yaml
 doc/CreateEventConfigDto.md
 doc/EventControllerApi.md
 doc/EventDto.md
+doc/EventDtos.md
 doc/MusicControllerApi.md
 doc/MusicWishListDto.md
 doc/OvernightStayOfferControllerApi.md
@@ -37,6 +38,7 @@ lib/src/date_serializer.dart
 lib/src/model/create_event_config_dto.dart
 lib/src/model/date.dart
 lib/src/model/event_dto.dart
+lib/src/model/event_dtos.dart
 lib/src/model/music_wish_list_dto.dart
 lib/src/model/overnight_stay_offer_creation_dto.dart
 lib/src/model/overnight_stay_offer_dto.dart
@@ -51,10 +53,4 @@ lib/src/model/update_schedule_dto.dart
 lib/src/model/wish_dto.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/overnight_stay_offer_controller_api_test.dart
-test/overnight_stay_offer_creation_dto_test.dart
-test/overnight_stay_offer_dto_test.dart
-test/overnight_stay_request_controller_api_test.dart
-test/overnight_stay_request_creation_dto_test.dart
-test/overnight_stay_request_dto_test.dart
-test/spot_dto_test.dart
+test/event_dtos_test.dart

@@ -18,13 +18,10 @@ part 'overnight_stay_offer_dto.g.dart';
 /// * [offeredSpots] 
 /// * [spotsTaken] 
 /// * [note] 
-/// * [created] 
-/// * [updated] 
 /// * [createdAt] 
 /// * [updatedAt] 
-/// * [id] 
 abstract class OvernightStayOfferDto implements Built<OvernightStayOfferDto, OvernightStayOfferDtoBuilder> {
-    @BuiltValueField(wireName: r'_id')
+    @BuiltValueField(wireName: r'id')
     String? get id;
 
     @BuiltValueField(wireName: r'eventId')
@@ -42,20 +39,11 @@ abstract class OvernightStayOfferDto implements Built<OvernightStayOfferDto, Ove
     @BuiltValueField(wireName: r'note')
     String get note;
 
-    @BuiltValueField(wireName: r'created')
-    DateTime? get created;
-
-    @BuiltValueField(wireName: r'updated')
-    DateTime? get updated;
-
     @BuiltValueField(wireName: r'createdAt')
-    DateTime get createdAt;
+    DateTime? get createdAt;
 
     @BuiltValueField(wireName: r'updatedAt')
-    DateTime get updatedAt;
-
-    @BuiltValueField(wireName: r'id')
-    String get id;
+    DateTime? get updatedAt;
 
     OvernightStayOfferDto._();
 
@@ -81,7 +69,7 @@ class _$OvernightStayOfferDtoSerializer implements StructuredSerializer<Overnigh
         final result = <Object?>[];
         if (object.id != null) {
             result
-                ..add(r'_id')
+                ..add(r'id')
                 ..add(serializers.serialize(object.id,
                     specifiedType: const FullType(String)));
         }
@@ -105,30 +93,18 @@ class _$OvernightStayOfferDtoSerializer implements StructuredSerializer<Overnigh
             ..add(r'note')
             ..add(serializers.serialize(object.note,
                 specifiedType: const FullType(String)));
-        if (object.created != null) {
+        if (object.createdAt != null) {
             result
-                ..add(r'created')
-                ..add(serializers.serialize(object.created,
+                ..add(r'createdAt')
+                ..add(serializers.serialize(object.createdAt,
                     specifiedType: const FullType(DateTime)));
         }
-        if (object.updated != null) {
+        if (object.updatedAt != null) {
             result
-                ..add(r'updated')
-                ..add(serializers.serialize(object.updated,
+                ..add(r'updatedAt')
+                ..add(serializers.serialize(object.updatedAt,
                     specifiedType: const FullType(DateTime)));
         }
-        result
-            ..add(r'createdAt')
-            ..add(serializers.serialize(object.createdAt,
-                specifiedType: const FullType(DateTime)));
-        result
-            ..add(r'updatedAt')
-            ..add(serializers.serialize(object.updatedAt,
-                specifiedType: const FullType(DateTime)));
-        result
-            ..add(r'id')
-            ..add(serializers.serialize(object.id,
-                specifiedType: const FullType(String)));
         return result;
     }
 
@@ -144,7 +120,7 @@ class _$OvernightStayOfferDtoSerializer implements StructuredSerializer<Overnigh
             final Object? value = iterator.current;
             
             switch (key) {
-                case r'_id':
+                case r'id':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.id = valueDes;
@@ -174,16 +150,6 @@ class _$OvernightStayOfferDtoSerializer implements StructuredSerializer<Overnigh
                         specifiedType: const FullType(String)) as String;
                     result.note = valueDes;
                     break;
-                case r'created':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.created = valueDes;
-                    break;
-                case r'updated':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(DateTime)) as DateTime;
-                    result.updated = valueDes;
-                    break;
                 case r'createdAt':
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(DateTime)) as DateTime;
@@ -193,11 +159,6 @@ class _$OvernightStayOfferDtoSerializer implements StructuredSerializer<Overnigh
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(DateTime)) as DateTime;
                     result.updatedAt = valueDes;
-                    break;
-                case r'id':
-                    final valueDes = serializers.deserialize(value,
-                        specifiedType: const FullType(String)) as String;
-                    result.id = valueDes;
                     break;
             }
         }

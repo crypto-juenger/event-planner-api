@@ -10,6 +10,7 @@ All URIs are relative to *https://server.events.simonhauck.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createEvent**](EventControllerApi.md#createevent) | **POST** /api/events | Create a new event, where the current user is the admin
+[**getAllEventsForUser**](EventControllerApi.md#getalleventsforuser) | **GET** /api/events | Get all events for this user
 [**getLatestEvent**](EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
 [**joinEventWithId**](EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
 
@@ -53,6 +54,45 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAllEventsForUser**
+> EventDtos getAllEventsForUser()
+
+Get all events for this user
+
+### Example
+```dart
+import 'package:event_planer_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: jwt_token
+//defaultApiClient.getAuthentication<OAuth>('jwt_token').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = EventPlanerApi().getEventControllerApi();
+
+try {
+    final response = api.getAllEventsForUser();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling EventControllerApi->getAllEventsForUser: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**EventDtos**](EventDtos.md)
+
+### Authorization
+
+[jwt_token](../README.md#jwt_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

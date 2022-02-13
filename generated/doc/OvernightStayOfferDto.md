@@ -14,11 +14,8 @@ Name | Type | Description | Notes
 **offeredSpots** | **num** |  | 
 **spotsTaken** | [**BuiltList&lt;SpotDto&gt;**](SpotDto.md) |  | 
 **note** | **String** |  | 
-**created** | [**DateTime**](DateTime.md) |  | [optional] 
-**updated** | [**DateTime**](DateTime.md) |  | [optional] 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
-**id** | **String** |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**updatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,9 +9,9 @@ All URIs are relative to *https://server.events.simonhauck.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRequest**](OvernightStayRequestControllerApi.md#createrequest) | **POST** /overnight-stays/requests/events/{eventId} | 
-[**getRequestByEventIdAndCreatorId**](OvernightStayRequestControllerApi.md#getrequestbyeventidandcreatorid) | **GET** /overnight-stays/requests/events/{eventId}/creators/{creatorId} | 
-[**getRequestsByEventId**](OvernightStayRequestControllerApi.md#getrequestsbyeventid) | **GET** /overnight-stays/requests/events/{eventId} | 
+[**createRequest**](OvernightStayRequestControllerApi.md#createrequest) | **POST** /api/overnight-stays/requests/events/{eventId} | 
+[**getRequestByEventIdAndCreatorId**](OvernightStayRequestControllerApi.md#getrequestbyeventidandcreatorid) | **GET** /api/overnight-stays/requests/events/{eventId}/creators/{creatorId} | 
+[**getRequestsByEventId**](OvernightStayRequestControllerApi.md#getrequestsbyeventid) | **GET** /api/overnight-stays/requests/events/{eventId} | 
 
 
 # **createRequest**

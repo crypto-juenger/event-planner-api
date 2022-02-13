@@ -44,7 +44,7 @@ class OvernightStayRequestControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/overnight-stays/requests/events/{eventId}'.replaceAll('{' r'eventId' '}', eventId.toString());
+    final _path = r'/api/overnight-stays/requests/events/{eventId}'.replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -144,7 +144,7 @@ class OvernightStayRequestControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/overnight-stays/requests/events/{eventId}/creators/{creatorId}'.replaceAll('{' r'eventId' '}', eventId.toString()).replaceAll('{' r'creatorId' '}', creatorId.toString());
+    final _path = r'/api/overnight-stays/requests/events/{eventId}/creators/{creatorId}'.replaceAll('{' r'eventId' '}', eventId.toString()).replaceAll('{' r'creatorId' '}', creatorId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -223,7 +223,7 @@ class OvernightStayRequestControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/overnight-stays/requests/events/{eventId}'.replaceAll('{' r'eventId' '}', eventId.toString());
+    final _path = r'/api/overnight-stays/requests/events/{eventId}'.replaceAll('{' r'eventId' '}', eventId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

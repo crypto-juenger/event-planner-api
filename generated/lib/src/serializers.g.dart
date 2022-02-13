@@ -9,6 +9,7 @@ part of 'serializers.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateEventConfigDto.serializer)
       ..add(EventDto.serializer)
+      ..add(EventDtos.serializer)
       ..add(MusicWishListDto.serializer)
       ..add(OvernightStayOfferCreationDto.serializer)
       ..add(OvernightStayOfferDto.serializer)
@@ -22,6 +23,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(TitleDto.serializer)
       ..add(UpdateScheduleDto.serializer)
       ..add(WishDto.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(EventDto)]),
+          () => new ListBuilder<EventDto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(PublicUserDto)]),
           () => new ListBuilder<PublicUserDto>())

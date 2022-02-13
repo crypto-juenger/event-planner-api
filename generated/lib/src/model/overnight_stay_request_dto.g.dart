@@ -8,7 +8,7 @@ part of 'overnight_stay_request_dto.dart';
 
 class _$OvernightStayRequestDto extends OvernightStayRequestDto {
   @override
-  final String id;
+  final String? id;
   @override
   final String eventId;
   @override
@@ -21,27 +21,20 @@ class _$OvernightStayRequestDto extends OvernightStayRequestDto {
   final DateTime? created;
   @override
   final DateTime? updated;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
 
   factory _$OvernightStayRequestDto(
           [void Function(OvernightStayRequestDtoBuilder)? updates]) =>
       (new OvernightStayRequestDtoBuilder()..update(updates)).build();
 
   _$OvernightStayRequestDto._(
-      {required this.id,
+      {this.id,
       required this.eventId,
       required this.creatorId,
       required this.requestedSpots,
       required this.note,
       this.created,
-      this.updated,
-      required this.createdAt,
-      required this.updatedAt})
+      this.updated})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'OvernightStayRequestDto', 'id');
     BuiltValueNullFieldError.checkNotNull(
         eventId, 'OvernightStayRequestDto', 'eventId');
     BuiltValueNullFieldError.checkNotNull(
@@ -50,10 +43,6 @@ class _$OvernightStayRequestDto extends OvernightStayRequestDto {
         requestedSpots, 'OvernightStayRequestDto', 'requestedSpots');
     BuiltValueNullFieldError.checkNotNull(
         note, 'OvernightStayRequestDto', 'note');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, 'OvernightStayRequestDto', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, 'OvernightStayRequestDto', 'updatedAt');
   }
 
   @override
@@ -75,9 +64,7 @@ class _$OvernightStayRequestDto extends OvernightStayRequestDto {
         requestedSpots == other.requestedSpots &&
         note == other.note &&
         created == other.created &&
-        updated == other.updated &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updated == other.updated;
   }
 
   @override
@@ -86,16 +73,12 @@ class _$OvernightStayRequestDto extends OvernightStayRequestDto {
         $jc(
             $jc(
                 $jc(
-                    $jc(
-                        $jc(
-                            $jc($jc($jc(0, id.hashCode), eventId.hashCode),
-                                creatorId.hashCode),
-                            requestedSpots.hashCode),
-                        note.hashCode),
-                    created.hashCode),
-                updated.hashCode),
-            createdAt.hashCode),
-        updatedAt.hashCode));
+                    $jc($jc($jc(0, id.hashCode), eventId.hashCode),
+                        creatorId.hashCode),
+                    requestedSpots.hashCode),
+                note.hashCode),
+            created.hashCode),
+        updated.hashCode));
   }
 
   @override
@@ -107,9 +90,7 @@ class _$OvernightStayRequestDto extends OvernightStayRequestDto {
           ..add('requestedSpots', requestedSpots)
           ..add('note', note)
           ..add('created', created)
-          ..add('updated', updated)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt))
+          ..add('updated', updated))
         .toString();
   }
 }
@@ -148,14 +129,6 @@ class OvernightStayRequestDtoBuilder
   DateTime? get updated => _$this._updated;
   set updated(DateTime? updated) => _$this._updated = updated;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
   OvernightStayRequestDtoBuilder() {
     OvernightStayRequestDto._defaults(this);
   }
@@ -170,8 +143,6 @@ class OvernightStayRequestDtoBuilder
       _note = $v.note;
       _created = $v.created;
       _updated = $v.updated;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
       _$v = null;
     }
     return this;
@@ -192,8 +163,7 @@ class OvernightStayRequestDtoBuilder
   _$OvernightStayRequestDto build() {
     final _$result = _$v ??
         new _$OvernightStayRequestDto._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, 'OvernightStayRequestDto', 'id'),
+            id: id,
             eventId: BuiltValueNullFieldError.checkNotNull(
                 eventId, 'OvernightStayRequestDto', 'eventId'),
             creatorId: BuiltValueNullFieldError.checkNotNull(
@@ -203,11 +173,7 @@ class OvernightStayRequestDtoBuilder
             note: BuiltValueNullFieldError.checkNotNull(
                 note, 'OvernightStayRequestDto', 'note'),
             created: created,
-            updated: updated,
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'OvernightStayRequestDto', 'createdAt'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(
-                updatedAt, 'OvernightStayRequestDto', 'updatedAt'));
+            updated: updated);
     replace(_$result);
     return _$result;
   }

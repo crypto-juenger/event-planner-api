@@ -14,6 +14,7 @@ import 'package:event_planer_api/src/model/date.dart';
 
 import 'package:event_planer_api/src/model/create_event_config_dto.dart';
 import 'package:event_planer_api/src/model/event_dto.dart';
+import 'package:event_planer_api/src/model/event_dtos.dart';
 import 'package:event_planer_api/src/model/music_wish_list_dto.dart';
 import 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dart';
 import 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';
@@ -32,6 +33,7 @@ part 'serializers.g.dart';
 @SerializersFor([
   CreateEventConfigDto,
   EventDto,
+  EventDtos,
   MusicWishListDto,
   OvernightStayOfferCreationDto,
   OvernightStayOfferDto,
