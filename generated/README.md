@@ -68,6 +68,12 @@ Class | Method | HTTP request | Description
 [*EventControllerApi*](doc/EventControllerApi.md) | [**getLatestEvent**](doc/EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
 [*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
 [*MusicControllerApi*](doc/MusicControllerApi.md) | [**getWishList**](doc/MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
+[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**createOffer**](doc/OvernightStayOfferControllerApi.md#createoffer) | **POST** /overnight-stays/offers/events/{eventId} | 
+[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**getAllOffersByEventId**](doc/OvernightStayOfferControllerApi.md#getalloffersbyeventid) | **GET** /overnight-stays/offers/events/{eventId} | 
+[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**getAllOffersByEventIdAndCreatorId**](doc/OvernightStayOfferControllerApi.md#getalloffersbyeventidandcreatorid) | **GET** /overnight-stays/offers/events/{eventId}/creators/{creatorId} | 
+[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**createRequest**](doc/OvernightStayRequestControllerApi.md#createrequest) | **POST** /overnight-stays/requests/events/{eventId} | 
+[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**getRequestByEventIdAndCreatorId**](doc/OvernightStayRequestControllerApi.md#getrequestbyeventidandcreatorid) | **GET** /overnight-stays/requests/events/{eventId}/creators/{creatorId} | 
+[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**getRequestsByEventId**](doc/OvernightStayRequestControllerApi.md#getrequestsbyeventid) | **GET** /overnight-stays/requests/events/{eventId} | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**createSchedule**](doc/ScheduleControllerApi.md#createschedule) | **POST** /api/events/{eventId}/schedule | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**getSchedule**](doc/ScheduleControllerApi.md#getschedule) | **GET** /api/events/{eventId}/schedule | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**updateSchedule**](doc/ScheduleControllerApi.md#updateschedule) | **PUT** /api/events/{eventId}/schedule | 
@@ -78,9 +84,14 @@ Class | Method | HTTP request | Description
  - [CreateEventConfigDto](doc/CreateEventConfigDto.md)
  - [EventDto](doc/EventDto.md)
  - [MusicWishListDto](doc/MusicWishListDto.md)
+ - [OvernightStayOfferCreationDto](doc/OvernightStayOfferCreationDto.md)
+ - [OvernightStayOfferDto](doc/OvernightStayOfferDto.md)
+ - [OvernightStayRequestCreationDto](doc/OvernightStayRequestCreationDto.md)
+ - [OvernightStayRequestDto](doc/OvernightStayRequestDto.md)
  - [PublicUserDto](doc/PublicUserDto.md)
  - [ScheduleDto](doc/ScheduleDto.md)
  - [ScheduleItemDto](doc/ScheduleItemDto.md)
+ - [SpotDto](doc/SpotDto.md)
  - [TitleDto](doc/TitleDto.md)
  - [UpdateScheduleDto](doc/UpdateScheduleDto.md)
  - [WishDto](doc/WishDto.md)

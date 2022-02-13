@@ -15,9 +15,14 @@ import 'package:event_planer_api/src/model/date.dart';
 import 'package:event_planer_api/src/model/create_event_config_dto.dart';
 import 'package:event_planer_api/src/model/event_dto.dart';
 import 'package:event_planer_api/src/model/music_wish_list_dto.dart';
+import 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dart';
+import 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';
+import 'package:event_planer_api/src/model/overnight_stay_request_creation_dto.dart';
+import 'package:event_planer_api/src/model/overnight_stay_request_dto.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
 import 'package:event_planer_api/src/model/schedule_dto.dart';
 import 'package:event_planer_api/src/model/schedule_item_dto.dart';
+import 'package:event_planer_api/src/model/spot_dto.dart';
 import 'package:event_planer_api/src/model/title_dto.dart';
 import 'package:event_planer_api/src/model/update_schedule_dto.dart';
 import 'package:event_planer_api/src/model/wish_dto.dart';
@@ -28,14 +33,27 @@ part 'serializers.g.dart';
   CreateEventConfigDto,
   EventDto,
   MusicWishListDto,
+  OvernightStayOfferCreationDto,
+  OvernightStayOfferDto,
+  OvernightStayRequestCreationDto,
+  OvernightStayRequestDto,
   PublicUserDto,
   ScheduleDto,
   ScheduleItemDto,
+  SpotDto,
   TitleDto,
   UpdateScheduleDto,
   WishDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(OvernightStayOfferDto)]),
+        () => ListBuilder<OvernightStayOfferDto>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(OvernightStayRequestDto)]),
+        () => ListBuilder<OvernightStayRequestDto>(),
+      )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
     .build();

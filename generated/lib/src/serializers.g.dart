@@ -10,10 +10,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateEventConfigDto.serializer)
       ..add(EventDto.serializer)
       ..add(MusicWishListDto.serializer)
+      ..add(OvernightStayOfferCreationDto.serializer)
+      ..add(OvernightStayOfferDto.serializer)
+      ..add(OvernightStayRequestCreationDto.serializer)
+      ..add(OvernightStayRequestDto.serializer)
       ..add(PublicUserDto.serializer)
       ..add(PublicUserDtoRoleEnum.serializer)
       ..add(ScheduleDto.serializer)
       ..add(ScheduleItemDto.serializer)
+      ..add(SpotDto.serializer)
       ..add(TitleDto.serializer)
       ..add(UpdateScheduleDto.serializer)
       ..add(WishDto.serializer)
@@ -26,6 +31,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ScheduleItemDto)]),
           () => new ListBuilder<ScheduleItemDto>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SpotDto)]),
+          () => new ListBuilder<SpotDto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(WishDto)]),
           () => new ListBuilder<WishDto>()))
