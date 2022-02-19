@@ -4,6 +4,8 @@
 
 import 'package:built_collection/built_collection.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
+import 'package:event_planer_api/src/model/event_config_dto.dart';
+import 'package:event_planer_api/src/model/join_config_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,12 +16,20 @@ part 'event_dto.g.dart';
 /// Properties:
 /// * [id] 
 /// * [eventUsers] 
+/// * [eventConfig] 
+/// * [joinConfig] 
 abstract class EventDto implements Built<EventDto, EventDtoBuilder> {
     @BuiltValueField(wireName: r'id')
     String get id;
 
     @BuiltValueField(wireName: r'eventUsers')
     BuiltList<PublicUserDto> get eventUsers;
+
+    @BuiltValueField(wireName: r'eventConfig')
+    EventConfigDto get eventConfig;
+
+    @BuiltValueField(wireName: r'joinConfig')
+    JoinConfigDto get joinConfig;
 
     EventDto._();
 
@@ -51,6 +61,14 @@ class _$EventDtoSerializer implements StructuredSerializer<EventDto> {
             ..add(r'eventUsers')
             ..add(serializers.serialize(object.eventUsers,
                 specifiedType: const FullType(BuiltList, [FullType(PublicUserDto)])));
+        result
+            ..add(r'eventConfig')
+            ..add(serializers.serialize(object.eventConfig,
+                specifiedType: const FullType(EventConfigDto)));
+        result
+            ..add(r'joinConfig')
+            ..add(serializers.serialize(object.joinConfig,
+                specifiedType: const FullType(JoinConfigDto)));
         return result;
     }
 
@@ -75,6 +93,16 @@ class _$EventDtoSerializer implements StructuredSerializer<EventDto> {
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(BuiltList, [FullType(PublicUserDto)])) as BuiltList<PublicUserDto>;
                     result.eventUsers.replace(valueDes);
+                    break;
+                case r'eventConfig':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(EventConfigDto)) as EventConfigDto;
+                    result.eventConfig.replace(valueDes);
+                    break;
+                case r'joinConfig':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(JoinConfigDto)) as JoinConfigDto;
+                    result.joinConfig.replace(valueDes);
                     break;
             }
         }

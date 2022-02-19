@@ -16,8 +16,10 @@ export 'package:event_planer_api/src/api/overnight_stay_request_controller_api.d
 export 'package:event_planer_api/src/api/schedule_controller_api.dart';
 
 export 'package:event_planer_api/src/model/create_event_config_dto.dart';
+export 'package:event_planer_api/src/model/event_config_dto.dart';
 export 'package:event_planer_api/src/model/event_dto.dart';
 export 'package:event_planer_api/src/model/event_dtos.dart';
+export 'package:event_planer_api/src/model/join_config_dto.dart';
 export 'package:event_planer_api/src/model/music_wish_list_dto.dart';
 export 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dart';
 export 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';

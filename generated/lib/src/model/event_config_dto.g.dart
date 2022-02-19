@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'create_event_config_dto.dart';
+part of 'event_config_dto.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$CreateEventConfigDto extends CreateEventConfigDto {
+class _$EventConfigDto extends EventConfigDto {
   @override
   final String title;
   @override
@@ -14,36 +14,33 @@ class _$CreateEventConfigDto extends CreateEventConfigDto {
   @override
   final String invitationText;
 
-  factory _$CreateEventConfigDto(
-          [void Function(CreateEventConfigDtoBuilder)? updates]) =>
-      (new CreateEventConfigDtoBuilder()..update(updates)).build();
+  factory _$EventConfigDto([void Function(EventConfigDtoBuilder)? updates]) =>
+      (new EventConfigDtoBuilder()..update(updates)).build();
 
-  _$CreateEventConfigDto._(
+  _$EventConfigDto._(
       {required this.title,
       required this.subTitle,
       required this.invitationText})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(title, 'EventConfigDto', 'title');
     BuiltValueNullFieldError.checkNotNull(
-        title, 'CreateEventConfigDto', 'title');
+        subTitle, 'EventConfigDto', 'subTitle');
     BuiltValueNullFieldError.checkNotNull(
-        subTitle, 'CreateEventConfigDto', 'subTitle');
-    BuiltValueNullFieldError.checkNotNull(
-        invitationText, 'CreateEventConfigDto', 'invitationText');
+        invitationText, 'EventConfigDto', 'invitationText');
   }
 
   @override
-  CreateEventConfigDto rebuild(
-          void Function(CreateEventConfigDtoBuilder) updates) =>
+  EventConfigDto rebuild(void Function(EventConfigDtoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  CreateEventConfigDtoBuilder toBuilder() =>
-      new CreateEventConfigDtoBuilder()..replace(this);
+  EventConfigDtoBuilder toBuilder() =>
+      new EventConfigDtoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is CreateEventConfigDto &&
+    return other is EventConfigDto &&
         title == other.title &&
         subTitle == other.subTitle &&
         invitationText == other.invitationText;
@@ -57,7 +54,7 @@ class _$CreateEventConfigDto extends CreateEventConfigDto {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CreateEventConfigDto')
+    return (newBuiltValueToStringHelper('EventConfigDto')
           ..add('title', title)
           ..add('subTitle', subTitle)
           ..add('invitationText', invitationText))
@@ -65,9 +62,9 @@ class _$CreateEventConfigDto extends CreateEventConfigDto {
   }
 }
 
-class CreateEventConfigDtoBuilder
-    implements Builder<CreateEventConfigDto, CreateEventConfigDtoBuilder> {
-  _$CreateEventConfigDto? _$v;
+class EventConfigDtoBuilder
+    implements Builder<EventConfigDto, EventConfigDtoBuilder> {
+  _$EventConfigDto? _$v;
 
   String? _title;
   String? get title => _$this._title;
@@ -82,11 +79,11 @@ class CreateEventConfigDtoBuilder
   set invitationText(String? invitationText) =>
       _$this._invitationText = invitationText;
 
-  CreateEventConfigDtoBuilder() {
-    CreateEventConfigDto._defaults(this);
+  EventConfigDtoBuilder() {
+    EventConfigDto._defaults(this);
   }
 
-  CreateEventConfigDtoBuilder get _$this {
+  EventConfigDtoBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _title = $v.title;
@@ -98,26 +95,26 @@ class CreateEventConfigDtoBuilder
   }
 
   @override
-  void replace(CreateEventConfigDto other) {
+  void replace(EventConfigDto other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CreateEventConfigDto;
+    _$v = other as _$EventConfigDto;
   }
 
   @override
-  void update(void Function(CreateEventConfigDtoBuilder)? updates) {
+  void update(void Function(EventConfigDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CreateEventConfigDto build() {
+  _$EventConfigDto build() {
     final _$result = _$v ??
-        new _$CreateEventConfigDto._(
+        new _$EventConfigDto._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, 'CreateEventConfigDto', 'title'),
+                title, 'EventConfigDto', 'title'),
             subTitle: BuiltValueNullFieldError.checkNotNull(
-                subTitle, 'CreateEventConfigDto', 'subTitle'),
+                subTitle, 'EventConfigDto', 'subTitle'),
             invitationText: BuiltValueNullFieldError.checkNotNull(
-                invitationText, 'CreateEventConfigDto', 'invitationText'));
+                invitationText, 'EventConfigDto', 'invitationText'));
     replace(_$result);
     return _$result;
   }

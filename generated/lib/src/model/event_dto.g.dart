@@ -11,13 +11,25 @@ class _$EventDto extends EventDto {
   final String id;
   @override
   final BuiltList<PublicUserDto> eventUsers;
+  @override
+  final EventConfigDto eventConfig;
+  @override
+  final JoinConfigDto joinConfig;
 
   factory _$EventDto([void Function(EventDtoBuilder)? updates]) =>
       (new EventDtoBuilder()..update(updates)).build();
 
-  _$EventDto._({required this.id, required this.eventUsers}) : super._() {
+  _$EventDto._(
+      {required this.id,
+      required this.eventUsers,
+      required this.eventConfig,
+      required this.joinConfig})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'EventDto', 'id');
     BuiltValueNullFieldError.checkNotNull(eventUsers, 'EventDto', 'eventUsers');
+    BuiltValueNullFieldError.checkNotNull(
+        eventConfig, 'EventDto', 'eventConfig');
+    BuiltValueNullFieldError.checkNotNull(joinConfig, 'EventDto', 'joinConfig');
   }
 
   @override
@@ -32,19 +44,26 @@ class _$EventDto extends EventDto {
     if (identical(other, this)) return true;
     return other is EventDto &&
         id == other.id &&
-        eventUsers == other.eventUsers;
+        eventUsers == other.eventUsers &&
+        eventConfig == other.eventConfig &&
+        joinConfig == other.joinConfig;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, id.hashCode), eventUsers.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, id.hashCode), eventUsers.hashCode),
+            eventConfig.hashCode),
+        joinConfig.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('EventDto')
           ..add('id', id)
-          ..add('eventUsers', eventUsers))
+          ..add('eventUsers', eventUsers)
+          ..add('eventConfig', eventConfig)
+          ..add('joinConfig', joinConfig))
         .toString();
   }
 }
@@ -62,6 +81,18 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
   set eventUsers(ListBuilder<PublicUserDto>? eventUsers) =>
       _$this._eventUsers = eventUsers;
 
+  EventConfigDtoBuilder? _eventConfig;
+  EventConfigDtoBuilder get eventConfig =>
+      _$this._eventConfig ??= new EventConfigDtoBuilder();
+  set eventConfig(EventConfigDtoBuilder? eventConfig) =>
+      _$this._eventConfig = eventConfig;
+
+  JoinConfigDtoBuilder? _joinConfig;
+  JoinConfigDtoBuilder get joinConfig =>
+      _$this._joinConfig ??= new JoinConfigDtoBuilder();
+  set joinConfig(JoinConfigDtoBuilder? joinConfig) =>
+      _$this._joinConfig = joinConfig;
+
   EventDtoBuilder() {
     EventDto._defaults(this);
   }
@@ -71,6 +102,8 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
     if ($v != null) {
       _id = $v.id;
       _eventUsers = $v.eventUsers.toBuilder();
+      _eventConfig = $v.eventConfig.toBuilder();
+      _joinConfig = $v.joinConfig.toBuilder();
       _$v = null;
     }
     return this;
@@ -94,12 +127,18 @@ class EventDtoBuilder implements Builder<EventDto, EventDtoBuilder> {
       _$result = _$v ??
           new _$EventDto._(
               id: BuiltValueNullFieldError.checkNotNull(id, 'EventDto', 'id'),
-              eventUsers: eventUsers.build());
+              eventUsers: eventUsers.build(),
+              eventConfig: eventConfig.build(),
+              joinConfig: joinConfig.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'eventUsers';
         eventUsers.build();
+        _$failedField = 'eventConfig';
+        eventConfig.build();
+        _$failedField = 'joinConfig';
+        joinConfig.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'EventDto', _$failedField, e.toString());

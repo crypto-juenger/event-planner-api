@@ -8,8 +8,10 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateEventConfigDto.serializer)
+      ..add(EventConfigDto.serializer)
       ..add(EventDto.serializer)
       ..add(EventDtos.serializer)
+      ..add(JoinConfigDto.serializer)
       ..add(MusicWishListDto.serializer)
       ..add(OvernightStayOfferCreationDto.serializer)
       ..add(OvernightStayOfferDto.serializer)

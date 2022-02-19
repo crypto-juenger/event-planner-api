@@ -5,15 +5,15 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'create_event_config_dto.g.dart';
+part 'event_config_dto.g.dart';
 
-/// CreateEventConfigDto
+/// EventConfigDto
 ///
 /// Properties:
 /// * [title] 
 /// * [subTitle] 
 /// * [invitationText] 
-abstract class CreateEventConfigDto implements Built<CreateEventConfigDto, CreateEventConfigDtoBuilder> {
+abstract class EventConfigDto implements Built<EventConfigDto, EventConfigDtoBuilder> {
     @BuiltValueField(wireName: r'title')
     String get title;
 
@@ -23,26 +23,26 @@ abstract class CreateEventConfigDto implements Built<CreateEventConfigDto, Creat
     @BuiltValueField(wireName: r'invitationText')
     String get invitationText;
 
-    CreateEventConfigDto._();
+    EventConfigDto._();
 
     @BuiltValueHook(initializeBuilder: true)
-    static void _defaults(CreateEventConfigDtoBuilder b) => b;
+    static void _defaults(EventConfigDtoBuilder b) => b;
 
-    factory CreateEventConfigDto([void updates(CreateEventConfigDtoBuilder b)]) = _$CreateEventConfigDto;
+    factory EventConfigDto([void updates(EventConfigDtoBuilder b)]) = _$EventConfigDto;
 
     @BuiltValueSerializer(custom: true)
-    static Serializer<CreateEventConfigDto> get serializer => _$CreateEventConfigDtoSerializer();
+    static Serializer<EventConfigDto> get serializer => _$EventConfigDtoSerializer();
 }
 
-class _$CreateEventConfigDtoSerializer implements StructuredSerializer<CreateEventConfigDto> {
+class _$EventConfigDtoSerializer implements StructuredSerializer<EventConfigDto> {
     @override
-    final Iterable<Type> types = const [CreateEventConfigDto, _$CreateEventConfigDto];
+    final Iterable<Type> types = const [EventConfigDto, _$EventConfigDto];
 
     @override
-    final String wireName = r'CreateEventConfigDto';
+    final String wireName = r'EventConfigDto';
 
     @override
-    Iterable<Object?> serialize(Serializers serializers, CreateEventConfigDto object,
+    Iterable<Object?> serialize(Serializers serializers, EventConfigDto object,
         {FullType specifiedType = FullType.unspecified}) {
         final result = <Object?>[];
         result
@@ -61,9 +61,9 @@ class _$CreateEventConfigDtoSerializer implements StructuredSerializer<CreateEve
     }
 
     @override
-    CreateEventConfigDto deserialize(Serializers serializers, Iterable<Object?> serialized,
+    EventConfigDto deserialize(Serializers serializers, Iterable<Object?> serialized,
         {FullType specifiedType = FullType.unspecified}) {
-        final result = CreateEventConfigDtoBuilder();
+        final result = EventConfigDtoBuilder();
 
         final iterator = serialized.iterator;
         while (iterator.moveNext()) {

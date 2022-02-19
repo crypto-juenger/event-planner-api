@@ -66,8 +66,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*EventControllerApi*](doc/EventControllerApi.md) | [**createEvent**](doc/EventControllerApi.md#createevent) | **POST** /api/events | Create a new event, where the current user is the admin
 [*EventControllerApi*](doc/EventControllerApi.md) | [**getAllEventsForUser**](doc/EventControllerApi.md#getalleventsforuser) | **GET** /api/events | Get all events for this user
+[*EventControllerApi*](doc/EventControllerApi.md) | [**getEventUserInformation**](doc/EventControllerApi.md#geteventuserinformation) | **GET** /api/events/{eventId}/users/me | Get the eventUser object for the current logged in user and the specified event
 [*EventControllerApi*](doc/EventControllerApi.md) | [**getLatestEvent**](doc/EventControllerApi.md#getlatestevent) | **GET** /api/events/latest | Get your latest active event
 [*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
+[*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithJoinKey**](doc/EventControllerApi.md#joineventwithjoinkey) | **POST** /api/events/joinKey/{joinKey}/users | Join an event as guest with a joinKey
 [*MusicControllerApi*](doc/MusicControllerApi.md) | [**getWishList**](doc/MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
 [*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**createOffer**](doc/OvernightStayOfferControllerApi.md#createoffer) | **POST** /api/overnight-stays/offers/events/{eventId} | 
 [*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**getAllOffersByEventId**](doc/OvernightStayOfferControllerApi.md#getalloffersbyeventid) | **GET** /api/overnight-stays/offers/events/{eventId} | 
@@ -84,8 +86,10 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CreateEventConfigDto](doc/CreateEventConfigDto.md)
+ - [EventConfigDto](doc/EventConfigDto.md)
  - [EventDto](doc/EventDto.md)
  - [EventDtos](doc/EventDtos.md)
+ - [JoinConfigDto](doc/JoinConfigDto.md)
  - [MusicWishListDto](doc/MusicWishListDto.md)
  - [OvernightStayOfferCreationDto](doc/OvernightStayOfferCreationDto.md)
  - [OvernightStayOfferDto](doc/OvernightStayOfferDto.md)
