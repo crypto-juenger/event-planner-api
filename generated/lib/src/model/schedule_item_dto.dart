@@ -2,6 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
+import 'package:event_planer_api/src/model/postal_address_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,6 +15,7 @@ part 'schedule_item_dto.g.dart';
 /// * [endTime] 
 /// * [name] 
 /// * [description] 
+/// * [address] 
 abstract class ScheduleItemDto implements Built<ScheduleItemDto, ScheduleItemDtoBuilder> {
     @BuiltValueField(wireName: r'startTime')
     DateTime get startTime;
@@ -26,6 +28,9 @@ abstract class ScheduleItemDto implements Built<ScheduleItemDto, ScheduleItemDto
 
     @BuiltValueField(wireName: r'description')
     String get description;
+
+    @BuiltValueField(wireName: r'address')
+    PostalAddressDto get address;
 
     ScheduleItemDto._();
 
@@ -67,6 +72,10 @@ class _$ScheduleItemDtoSerializer implements StructuredSerializer<ScheduleItemDt
             ..add(r'description')
             ..add(serializers.serialize(object.description,
                 specifiedType: const FullType(String)));
+        result
+            ..add(r'address')
+            ..add(serializers.serialize(object.address,
+                specifiedType: const FullType(PostalAddressDto)));
         return result;
     }
 
@@ -101,6 +110,11 @@ class _$ScheduleItemDtoSerializer implements StructuredSerializer<ScheduleItemDt
                     final valueDes = serializers.deserialize(value,
                         specifiedType: const FullType(String)) as String;
                     result.description = valueDes;
+                    break;
+                case r'address':
+                    final valueDes = serializers.deserialize(value,
+                        specifiedType: const FullType(PostalAddressDto)) as PostalAddressDto;
+                    result.address.replace(valueDes);
                     break;
             }
         }

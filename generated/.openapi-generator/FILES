@@ -15,6 +15,7 @@ doc/OvernightStayOfferDto.md
 doc/OvernightStayRequestControllerApi.md
 doc/OvernightStayRequestCreationDto.md
 doc/OvernightStayRequestDto.md
+doc/PostalAddressDto.md
 doc/PublicUserDto.md
 doc/ScheduleControllerApi.md
 doc/ScheduleDto.md
@@ -48,6 +49,7 @@ lib/src/model/overnight_stay_offer_creation_dto.dart
 lib/src/model/overnight_stay_offer_dto.dart
 lib/src/model/overnight_stay_request_creation_dto.dart
 lib/src/model/overnight_stay_request_dto.dart
+lib/src/model/postal_address_dto.dart
 lib/src/model/public_user_dto.dart
 lib/src/model/schedule_dto.dart
 lib/src/model/schedule_item_dto.dart
@@ -57,5 +59,4 @@ lib/src/model/update_schedule_dto.dart
 lib/src/model/wish_dto.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/event_config_dto_test.dart
-test/join_config_dto_test.dart
+test/postal_address_dto_test.dart

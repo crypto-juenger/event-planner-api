@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [OvernightStayOfferDto](doc/OvernightStayOfferDto.md)
  - [OvernightStayRequestCreationDto](doc/OvernightStayRequestCreationDto.md)
  - [OvernightStayRequestDto](doc/OvernightStayRequestDto.md)
+ - [PostalAddressDto](doc/PostalAddressDto.md)
  - [PublicUserDto](doc/PublicUserDto.md)
  - [ScheduleDto](doc/ScheduleDto.md)
  - [ScheduleItemDto](doc/ScheduleItemDto.md)

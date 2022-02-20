@@ -1,4 +1,4 @@
-# event_planer_api.model.ScheduleItemDto
+# event_planer_api.model.PostalAddressDto
 
 ## Load the model package
 ```dart
@@ -8,11 +8,11 @@ import 'package:event_planer_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startTime** | [**DateTime**](DateTime.md) |  | 
-**endTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**name** | **String** |  | 
-**description** | **String** |  | 
-**address** | [**PostalAddressDto**](PostalAddressDto.md) |  | 
+**streetAddress** | **String** |  | [optional] 
+**postalCode** | **String** |  | [optional] 
+**addressCountry** | **String** |  | [optional] 
+**addressLocality** | **String** |  | [optional] 
+**addressRegion** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,6 +25,7 @@ export 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dar
 export 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';
 export 'package:event_planer_api/src/model/overnight_stay_request_creation_dto.dart';
 export 'package:event_planer_api/src/model/overnight_stay_request_dto.dart';
+export 'package:event_planer_api/src/model/postal_address_dto.dart';
 export 'package:event_planer_api/src/model/public_user_dto.dart';
 export 'package:event_planer_api/src/model/schedule_dto.dart';
 export 'package:event_planer_api/src/model/schedule_item_dto.dart';

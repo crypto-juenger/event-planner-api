@@ -22,6 +22,7 @@ import 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dar
 import 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';
 import 'package:event_planer_api/src/model/overnight_stay_request_creation_dto.dart';
 import 'package:event_planer_api/src/model/overnight_stay_request_dto.dart';
+import 'package:event_planer_api/src/model/postal_address_dto.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
 import 'package:event_planer_api/src/model/schedule_dto.dart';
 import 'package:event_planer_api/src/model/schedule_item_dto.dart';
@@ -43,6 +44,7 @@ part 'serializers.g.dart';
   OvernightStayOfferDto,
   OvernightStayRequestCreationDto,
   OvernightStayRequestDto,
+  PostalAddressDto,
   PublicUserDto,
   ScheduleDto,
   ScheduleItemDto,

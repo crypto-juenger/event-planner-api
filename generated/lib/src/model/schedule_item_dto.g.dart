@@ -15,6 +15,8 @@ class _$ScheduleItemDto extends ScheduleItemDto {
   final String name;
   @override
   final String description;
+  @override
+  final PostalAddressDto address;
 
   factory _$ScheduleItemDto([void Function(ScheduleItemDtoBuilder)? updates]) =>
       (new ScheduleItemDtoBuilder()..update(updates)).build();
@@ -23,13 +25,16 @@ class _$ScheduleItemDto extends ScheduleItemDto {
       {required this.startTime,
       this.endTime,
       required this.name,
-      required this.description})
+      required this.description,
+      required this.address})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         startTime, 'ScheduleItemDto', 'startTime');
     BuiltValueNullFieldError.checkNotNull(name, 'ScheduleItemDto', 'name');
     BuiltValueNullFieldError.checkNotNull(
         description, 'ScheduleItemDto', 'description');
+    BuiltValueNullFieldError.checkNotNull(
+        address, 'ScheduleItemDto', 'address');
   }
 
   @override
@@ -47,14 +52,18 @@ class _$ScheduleItemDto extends ScheduleItemDto {
         startTime == other.startTime &&
         endTime == other.endTime &&
         name == other.name &&
-        description == other.description;
+        description == other.description &&
+        address == other.address;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, startTime.hashCode), endTime.hashCode), name.hashCode),
-        description.hashCode));
+        $jc(
+            $jc($jc($jc(0, startTime.hashCode), endTime.hashCode),
+                name.hashCode),
+            description.hashCode),
+        address.hashCode));
   }
 
   @override
@@ -63,7 +72,8 @@ class _$ScheduleItemDto extends ScheduleItemDto {
           ..add('startTime', startTime)
           ..add('endTime', endTime)
           ..add('name', name)
-          ..add('description', description))
+          ..add('description', description)
+          ..add('address', address))
         .toString();
   }
 }
@@ -88,6 +98,11 @@ class ScheduleItemDtoBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  PostalAddressDtoBuilder? _address;
+  PostalAddressDtoBuilder get address =>
+      _$this._address ??= new PostalAddressDtoBuilder();
+  set address(PostalAddressDtoBuilder? address) => _$this._address = address;
+
   ScheduleItemDtoBuilder() {
     ScheduleItemDto._defaults(this);
   }
@@ -99,6 +114,7 @@ class ScheduleItemDtoBuilder
       _endTime = $v.endTime;
       _name = $v.name;
       _description = $v.description;
+      _address = $v.address.toBuilder();
       _$v = null;
     }
     return this;
@@ -117,15 +133,29 @@ class ScheduleItemDtoBuilder
 
   @override
   _$ScheduleItemDto build() {
-    final _$result = _$v ??
-        new _$ScheduleItemDto._(
-            startTime: BuiltValueNullFieldError.checkNotNull(
-                startTime, 'ScheduleItemDto', 'startTime'),
-            endTime: endTime,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, 'ScheduleItemDto', 'name'),
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, 'ScheduleItemDto', 'description'));
+    _$ScheduleItemDto _$result;
+    try {
+      _$result = _$v ??
+          new _$ScheduleItemDto._(
+              startTime: BuiltValueNullFieldError.checkNotNull(
+                  startTime, 'ScheduleItemDto', 'startTime'),
+              endTime: endTime,
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, 'ScheduleItemDto', 'name'),
+              description: BuiltValueNullFieldError.checkNotNull(
+                  description, 'ScheduleItemDto', 'description'),
+              address: address.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'address';
+        address.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'ScheduleItemDto', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
