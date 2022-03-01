@@ -13,16 +13,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(EventDtos.serializer)
       ..add(JoinConfigDto.serializer)
       ..add(MusicWishListDto.serializer)
-      ..add(OvernightStayOfferCreationDto.serializer)
-      ..add(OvernightStayOfferDto.serializer)
-      ..add(OvernightStayRequestCreationDto.serializer)
-      ..add(OvernightStayRequestDto.serializer)
       ..add(PostalAddressDto.serializer)
       ..add(PublicUserDto.serializer)
       ..add(PublicUserDtoRoleEnum.serializer)
       ..add(ScheduleDto.serializer)
       ..add(ScheduleItemDto.serializer)
-      ..add(SpotDto.serializer)
+      ..add(SleepoverOfferCreationDto.serializer)
+      ..add(SleepoverOfferDto.serializer)
+      ..add(SleepoverRequestCreationDto.serializer)
+      ..add(SleepoverRequestDto.serializer)
+      ..add(SleepoverSpotDto.serializer)
       ..add(TitleDto.serializer)
       ..add(UpdateScheduleDto.serializer)
       ..add(WishDto.serializer)
@@ -39,8 +39,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(ScheduleItemDto)]),
           () => new ListBuilder<ScheduleItemDto>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(SpotDto)]),
-          () => new ListBuilder<SpotDto>())
+          const FullType(BuiltList, const [const FullType(SleepoverSpotDto)]),
+          () => new ListBuilder<SleepoverSpotDto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(WishDto)]),
           () => new ListBuilder<WishDto>()))

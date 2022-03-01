@@ -11,9 +11,9 @@ import 'package:event_planer_api/src/auth/bearer_auth.dart';
 import 'package:event_planer_api/src/auth/oauth.dart';
 import 'package:event_planer_api/src/api/event_controller_api.dart';
 import 'package:event_planer_api/src/api/music_controller_api.dart';
-import 'package:event_planer_api/src/api/overnight_stay_offer_controller_api.dart';
-import 'package:event_planer_api/src/api/overnight_stay_request_controller_api.dart';
 import 'package:event_planer_api/src/api/schedule_controller_api.dart';
+import 'package:event_planer_api/src/api/sleepover_offer_controller_api.dart';
+import 'package:event_planer_api/src/api/sleepover_request_controller_api.dart';
 
 class EventPlanerApi {
   static const String basePath = r'https://server.events.simonhauck.de';
@@ -81,21 +81,21 @@ class EventPlanerApi {
     return MusicControllerApi(dio, serializers);
   }
 
-  /// Get OvernightStayOfferControllerApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  OvernightStayOfferControllerApi getOvernightStayOfferControllerApi() {
-    return OvernightStayOfferControllerApi(dio, serializers);
-  }
-
-  /// Get OvernightStayRequestControllerApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  OvernightStayRequestControllerApi getOvernightStayRequestControllerApi() {
-    return OvernightStayRequestControllerApi(dio, serializers);
-  }
-
   /// Get ScheduleControllerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ScheduleControllerApi getScheduleControllerApi() {
     return ScheduleControllerApi(dio, serializers);
+  }
+
+  /// Get SleepoverOfferControllerApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SleepoverOfferControllerApi getSleepoverOfferControllerApi() {
+    return SleepoverOfferControllerApi(dio, serializers);
+  }
+
+  /// Get SleepoverRequestControllerApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SleepoverRequestControllerApi getSleepoverRequestControllerApi() {
+    return SleepoverRequestControllerApi(dio, serializers);
   }
 }

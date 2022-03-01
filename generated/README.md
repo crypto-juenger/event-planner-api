@@ -71,16 +71,16 @@ Class | Method | HTTP request | Description
 [*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithId**](doc/EventControllerApi.md#joineventwithid) | **POST** /api/events/{eventId}/users | Join an event as guest
 [*EventControllerApi*](doc/EventControllerApi.md) | [**joinEventWithJoinKey**](doc/EventControllerApi.md#joineventwithjoinkey) | **POST** /api/events/joinKey/{joinKey}/users | Join an event as guest with a joinKey
 [*MusicControllerApi*](doc/MusicControllerApi.md) | [**getWishList**](doc/MusicControllerApi.md#getwishlist) | **GET** /api/music/wishlist/{eventId} | 
-[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**createOffer**](doc/OvernightStayOfferControllerApi.md#createoffer) | **POST** /api/overnight-stays/offers/events/{eventId} | 
-[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**getAllOffersByEventId**](doc/OvernightStayOfferControllerApi.md#getalloffersbyeventid) | **GET** /api/overnight-stays/offers/events/{eventId} | 
-[*OvernightStayOfferControllerApi*](doc/OvernightStayOfferControllerApi.md) | [**getAllOffersByEventIdAndCreatorId**](doc/OvernightStayOfferControllerApi.md#getalloffersbyeventidandcreatorid) | **GET** /api/overnight-stays/offers/events/{eventId}/creators/{creatorId} | 
-[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**createRequest**](doc/OvernightStayRequestControllerApi.md#createrequest) | **POST** /api/overnight-stays/requests/events/{eventId} | 
-[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**getRequestByEventIdAndCreatorId**](doc/OvernightStayRequestControllerApi.md#getrequestbyeventidandcreatorid) | **GET** /api/overnight-stays/requests/events/{eventId}/creators/{creatorId} | 
-[*OvernightStayRequestControllerApi*](doc/OvernightStayRequestControllerApi.md) | [**getRequestsByEventId**](doc/OvernightStayRequestControllerApi.md#getrequestsbyeventid) | **GET** /api/overnight-stays/requests/events/{eventId} | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**createSchedule**](doc/ScheduleControllerApi.md#createschedule) | **POST** /api/events/{eventId}/schedule | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**deleteSchedule**](doc/ScheduleControllerApi.md#deleteschedule) | **DELETE** /api/events/{eventId}/schedule | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**getSchedule**](doc/ScheduleControllerApi.md#getschedule) | **GET** /api/events/{eventId}/schedule | 
 [*ScheduleControllerApi*](doc/ScheduleControllerApi.md) | [**updateSchedule**](doc/ScheduleControllerApi.md#updateschedule) | **PUT** /api/events/{eventId}/schedule | 
+[*SleepoverOfferControllerApi*](doc/SleepoverOfferControllerApi.md) | [**createOffer**](doc/SleepoverOfferControllerApi.md#createoffer) | **POST** /api/sleepovers/offers/events/{eventId} | 
+[*SleepoverOfferControllerApi*](doc/SleepoverOfferControllerApi.md) | [**getAllOffersByEventId**](doc/SleepoverOfferControllerApi.md#getalloffersbyeventid) | **GET** /api/sleepovers/offers/events/{eventId} | 
+[*SleepoverOfferControllerApi*](doc/SleepoverOfferControllerApi.md) | [**getAllOffersByEventIdAndCreatorId**](doc/SleepoverOfferControllerApi.md#getalloffersbyeventidandcreatorid) | **GET** /api/sleepovers/offers/events/{eventId}/creators/{creatorId} | 
+[*SleepoverRequestControllerApi*](doc/SleepoverRequestControllerApi.md) | [**createRequest**](doc/SleepoverRequestControllerApi.md#createrequest) | **POST** /api/sleepovers/requests/events/{eventId} | 
+[*SleepoverRequestControllerApi*](doc/SleepoverRequestControllerApi.md) | [**getRequestByEventIdAndCreatorId**](doc/SleepoverRequestControllerApi.md#getrequestbyeventidandcreatorid) | **GET** /api/sleepovers/requests/events/{eventId}/creators/{creatorId} | 
+[*SleepoverRequestControllerApi*](doc/SleepoverRequestControllerApi.md) | [**getRequestsByEventId**](doc/SleepoverRequestControllerApi.md#getrequestsbyeventid) | **GET** /api/sleepovers/requests/events/{eventId} | 
 
 
 ## Documentation For Models
@@ -91,15 +91,15 @@ Class | Method | HTTP request | Description
  - [EventDtos](doc/EventDtos.md)
  - [JoinConfigDto](doc/JoinConfigDto.md)
  - [MusicWishListDto](doc/MusicWishListDto.md)
- - [OvernightStayOfferCreationDto](doc/OvernightStayOfferCreationDto.md)
- - [OvernightStayOfferDto](doc/OvernightStayOfferDto.md)
- - [OvernightStayRequestCreationDto](doc/OvernightStayRequestCreationDto.md)
- - [OvernightStayRequestDto](doc/OvernightStayRequestDto.md)
  - [PostalAddressDto](doc/PostalAddressDto.md)
  - [PublicUserDto](doc/PublicUserDto.md)
  - [ScheduleDto](doc/ScheduleDto.md)
  - [ScheduleItemDto](doc/ScheduleItemDto.md)
- - [SpotDto](doc/SpotDto.md)
+ - [SleepoverOfferCreationDto](doc/SleepoverOfferCreationDto.md)
+ - [SleepoverOfferDto](doc/SleepoverOfferDto.md)
+ - [SleepoverRequestCreationDto](doc/SleepoverRequestCreationDto.md)
+ - [SleepoverRequestDto](doc/SleepoverRequestDto.md)
+ - [SleepoverSpotDto](doc/SleepoverSpotDto.md)
  - [TitleDto](doc/TitleDto.md)
  - [UpdateScheduleDto](doc/UpdateScheduleDto.md)
  - [WishDto](doc/WishDto.md)

@@ -18,15 +18,15 @@ import 'package:event_planer_api/src/model/event_dto.dart';
 import 'package:event_planer_api/src/model/event_dtos.dart';
 import 'package:event_planer_api/src/model/join_config_dto.dart';
 import 'package:event_planer_api/src/model/music_wish_list_dto.dart';
-import 'package:event_planer_api/src/model/overnight_stay_offer_creation_dto.dart';
-import 'package:event_planer_api/src/model/overnight_stay_offer_dto.dart';
-import 'package:event_planer_api/src/model/overnight_stay_request_creation_dto.dart';
-import 'package:event_planer_api/src/model/overnight_stay_request_dto.dart';
 import 'package:event_planer_api/src/model/postal_address_dto.dart';
 import 'package:event_planer_api/src/model/public_user_dto.dart';
 import 'package:event_planer_api/src/model/schedule_dto.dart';
 import 'package:event_planer_api/src/model/schedule_item_dto.dart';
-import 'package:event_planer_api/src/model/spot_dto.dart';
+import 'package:event_planer_api/src/model/sleepover_offer_creation_dto.dart';
+import 'package:event_planer_api/src/model/sleepover_offer_dto.dart';
+import 'package:event_planer_api/src/model/sleepover_request_creation_dto.dart';
+import 'package:event_planer_api/src/model/sleepover_request_dto.dart';
+import 'package:event_planer_api/src/model/sleepover_spot_dto.dart';
 import 'package:event_planer_api/src/model/title_dto.dart';
 import 'package:event_planer_api/src/model/update_schedule_dto.dart';
 import 'package:event_planer_api/src/model/wish_dto.dart';
@@ -40,27 +40,27 @@ part 'serializers.g.dart';
   EventDtos,
   JoinConfigDto,
   MusicWishListDto,
-  OvernightStayOfferCreationDto,
-  OvernightStayOfferDto,
-  OvernightStayRequestCreationDto,
-  OvernightStayRequestDto,
   PostalAddressDto,
   PublicUserDto,
   ScheduleDto,
   ScheduleItemDto,
-  SpotDto,
+  SleepoverOfferCreationDto,
+  SleepoverOfferDto,
+  SleepoverRequestCreationDto,
+  SleepoverRequestDto,
+  SleepoverSpotDto,
   TitleDto,
   UpdateScheduleDto,
   WishDto,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OvernightStayOfferDto)]),
-        () => ListBuilder<OvernightStayOfferDto>(),
+        const FullType(BuiltList, [FullType(SleepoverOfferDto)]),
+        () => ListBuilder<SleepoverOfferDto>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OvernightStayRequestDto)]),
-        () => ListBuilder<OvernightStayRequestDto>(),
+        const FullType(BuiltList, [FullType(SleepoverRequestDto)]),
+        () => ListBuilder<SleepoverRequestDto>(),
       )
       ..add(const DateSerializer())
       ..add(Iso8601DateTimeSerializer()))
